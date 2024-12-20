@@ -158,23 +158,23 @@ The application will be available at `http://127.0.0.1:8000/`.
 ## Testing with Postman(Included With Screenshots)
 *(We used Postman Visual Studio Code Extension, as the desktop agent is buggy and heavy!)
 
-![Postman As VS Code Extension](images/Screenshot2024-12-20 172322.png)
+![Postman As VS Code Extension](images/Screenshot%202024-12-20%20172322.png)
 Postman As a VS Code Extension
 
 
-![Postman In Action #2](images/Screenshot2024-12-20 172859.png)
+![Postman In Action #2](images/Screenshot%202024-12-20%20172859.png)
 Postman In Action Part 1
 
 ### Step 3: Test Endpoints
 
-![Postman In Action #3](images/Screenshot2024-12-20 172939.png)
+![Postman In Action #3](images/Screenshot%202024-12-20%20172939.png)
 Postman In Action Part 2
 
-![GET Student By ID](images/Screenshot2024-12-20 174326.png)
+![GET Student By ID](images/Screenshot%202024-12-20%20174326.png)
 Get A Student By his/her ID
 
 
-![GET All Students](images/Screenshot2024-12-20 174348.png)
+![GET All Students](images/Screenshot%202024-12-20%20174348.png)
 Get All Students
 
 #### Example: Create a School
@@ -185,7 +185,7 @@ Get All Students
      "school_name": "Strathmore University"
    }
    ```
-[Postman In Action #4]()
+
 3. Send the request.
 4. Successful Response:
    ```json
@@ -196,17 +196,14 @@ Get All Students
      "created_by": 1
    }
    ```
-![UPDATE A Student's Details](images/Screenshot2024-12-20 184510.png)
+![UPDATE A Student's Details](images/Screenshot%202024-12-20%20184510.png)
 Update A Student's Details using a PUT Request
 
-
-![DELETE A Student's Details](images/Screenshot2024-12-20 183806.png)
+![DELETE A Student's Details](images/Screenshot%202024-12-20%20183806.png)
 Delete A Student By his/her ID
 
-![GET All Student's Details After DELETE operation](images/Screenshot2024-12-20 184543.png)
+![GET All Student's Details After DELETE operation](images/Screenshot%202024-12-20%20184543.png)
 Get All Student's Details After running the DELETE HTTP Action Method
-
----
 
 ## Contributing
 
