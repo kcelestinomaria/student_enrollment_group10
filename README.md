@@ -2,6 +2,15 @@
 
 Welcome to the **Student Enrollment System API** documentation! This guide provides comprehensive information about the API, its endpoints, and instructions to set up and test the project locally.
 
+This API System is meant as group assignment for the course BBIT, unit API, at Strathmore University.
+Here are the names of the students in the group assignment, who contributed:
+1. Celestine Kariuki - Student No. 116533
+2. Eghosa Edokpolo - 170492
+3. Mohammed Mumin - 
+4. Wayne Opanja - 166937
+5. Amina Abigail - 100485
+6. Mumo Mwangangi - 165437
+
 ---
 
 ## Table of Contents
@@ -40,8 +49,8 @@ Ensure the following are installed on your system:
 ### Clone the Repository
 
 ```bash
-$ git clone https://github.com/your-repository/student-enrollment-system.git
-$ cd student-enrollment-system
+$ git clone https://github.com/your-repository/enrollment-system.git
+$ cd enrollment-system
 ```
 
 ---
@@ -85,39 +94,10 @@ The application will be available at `http://127.0.0.1:8000/`.
 
 ## API Endpoints
 
-### Authentication
-- **Login**
-  - `POST /api/token/`
-  - Request:
-    ```json
-    {
-      "username": "admin",
-      "password": "password"
-    }
-    ```
-  - Response:
-    ```json
-    {
-      "access": "<access_token>",
-      "refresh": "<refresh_token>"
-    }
-    ```
+### Authentication(Currently Disabled)
 
-- **Signup**
-  - `POST /api/signup/`
-  - Request:
-    ```json
-    {
-      "username": "newuser",
-      "password": "newpassword"
-    }
-    ```
-  - Response:
-    ```json
-    {
-      "message": "User created successfully"
-    }
-    ```
+- You can go to Admin on this URL `POST /admin/`
+ 
 
 ### Schools
 - **List/Create Schools**
@@ -178,24 +158,17 @@ The application will be available at `http://127.0.0.1:8000/`.
 ## Testing with Postman(Included With Screenshots)
 *(We used Postman Visual Studio Code Extension, as the desktop agent is buggy and heavy!)
 
-### Step 1: Import the API Collection
-1. Download the Postman collection file from the repository.
-2. Open Postman and import the collection.
 ![Postman As VS Code Extension](images\Screenshot 2024-12-20 172322.png)
+Postman As a VS Code Extension
 
 
-### Step 2: Authentication
-1. Use the `POST /api/token/` endpoint to obtain an access token.
-2. Add the token to the headers for authenticated requests:
-   ```
-   Authorization: Bearer <access_token>
-   ```
 ![Postman In Action #2](images\Screenshot 2024-12-20 172859.png)
+Postman In Action Part 1
 
 ### Step 3: Test Endpoints
 
 ![Postman In Action #3](images\Screenshot 2024-12-20 172939.png)
-Postman In Action
+Postman In Action Part 2
 
 ![GET Student By ID](images\Screenshot 2024-12-20 174326.png)
 Get A Student By his/her ID
