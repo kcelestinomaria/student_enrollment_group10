@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Enrollment System</title>
+</head>
+<body>
+    <header>
+        <h1>Django Enrollment System</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'create-school' %}">Create School</a></li>
+                <li><a href="{% url 'create-student' %}">Create Student</a></li>
+                <li><a href="{% url 'create-academic-year' %}">Create Academic Year</a></li>
+                <!-- Add other links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
