@@ -21,7 +21,7 @@ class Student(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
-    phone_number = models.CharField(max_length=13)
+    phone_number = models.CharField(max_length=13,default=1)
     enrollment_date = models.DateField(auto_now_add=True)
     created_by = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
 
@@ -61,7 +61,7 @@ class Semester(models.Model):
     name = models.CharField(max_length=100)
     start_date = models.DateField()
     end_date = models.DateField()
-    AcademicYear = models.ForeignKey(AcademicYear, on_delete=models.CASCADE)
+    AcademicYear = models.ForeignKey(AcademicYear, on_delete=models.CASCADE,default=1)
     created_by = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
 
     def __str__(self):
@@ -73,7 +73,7 @@ class Enrollment(models.Model):
     school = models.ForeignKey(School, on_delete=models.CASCADE,default=1)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     enrollment_date = models.DateField()
-    AcademicYear = models.ForeignKey(AcademicYear, on_delete=models.CASCADE)
+    AcademicYear = models.ForeignKey(AcademicYear, on_delete=models.CASCADE,default=1)
     created_by = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
 
     def __str__(self):
