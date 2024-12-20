@@ -5,11 +5,11 @@ Welcome to the **Student Enrollment System API** documentation! This guide provi
 This API System is meant as group assignment for the course BBIT, unit API, at Strathmore University.
 Here are the names of the students in the group assignment, who contributed:
 1. Celestine Kariuki - Student No. 116533
-2. Eghosa Edokpolo - 170492
+2. Eghosa Edokpolo - Student No. 170492
 3. Mohammed Mumin - 
-4. Wayne Opanja - 166937
-5. Amina Abigail - 100485
-6. Mumo Mwangangi - 165437
+4. Wayne Opanja - Student No. 166937
+5. Amina Abigail - Student No. 100485
+6. Mumo Mwangangi - Student No. 165437
 
 ---
 
