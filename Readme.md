@@ -1,5 +1,6 @@
 # Student Enrollment System
 
+NB: version0 is an OLD VERSION, the latest version and its code is in branch version1(here: https://github.com/kcelestinomaria/student_enrollment/tree/version1)
 ## Group members
 1. Amina Abigael- 100485
 2. Kariuki Celestine - 116533
