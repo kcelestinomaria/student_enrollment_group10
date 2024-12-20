@@ -159,23 +159,24 @@ The application will be available at `http://127.0.0.1:8000/`.
 *(We used Postman Visual Studio Code Extension, as the desktop agent is buggy and heavy!)
 
 ![Postman As VS Code Extension](images/Screenshot%202024-12-20%20172322.png)
-Postman As a VS Code Extension
+Figure 1: Postman As a VS Code Extension
 
 
 ![Postman In Action #2](images/Screenshot%202024-12-20%20172859.png)
-Postman In Action Part 1
+Figure 2: Postman In Action Part 1
 
 ### Step 3: Test Endpoints
 
 ![Postman In Action #3](images/Screenshot%202024-12-20%20172939.png)
-Postman In Action Part 2
+Figure 3: Postman In Action Part 2
+
 
 ![GET Student By ID](images/Screenshot%202024-12-20%20174326.png)
-Get A Student By his/her ID
+Figure 4: Get A Student By his/her ID
 
 
 ![GET All Students](images/Screenshot%202024-12-20%20174348.png)
-Get All Students
+Figure 5: Get All Students
 
 #### Example: Create a School
 1. Select the `POST /api/schools/` endpoint.
@@ -197,13 +198,15 @@ Get All Students
    }
    ```
 ![UPDATE A Student's Details](images/Screenshot%202024-12-20%20184510.png)
-Update A Student's Details using a PUT Request
+Figure 6: Update A Student's Details using a PUT Request
+
 
 ![DELETE A Student's Details](images/Screenshot%202024-12-20%20183806.png)
-Delete A Student By his/her ID
+Figure 7: Delete A Student By his/her ID
+
 
 ![GET All Student's Details After DELETE operation](images/Screenshot%202024-12-20%20184543.png)
-Get All Student's Details After running the DELETE HTTP Action Method
+Figure 8: Get All Student's Details After running the DELETE HTTP Action Method
 
 ## Contributing
 
