@@ -29,6 +29,7 @@ def api_root(request):
 class StudentListCreateView(generics.ListCreateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+    permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
         # Make sure we handle any special login on creation

@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Student, Course, Department, Program, Enrollment, Instructor, ClassSession, Attendance
 
@@ -8,7 +9,7 @@ class StudentSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Student
-        fields = '__all__'
+        fields = ['id', 'first_name', 'last_name', 'email', 'phone_number', 'enrollment_date', 'created_by']
 
 # Course Serializer
 class CourseSerializer(serializers.ModelSerializer):

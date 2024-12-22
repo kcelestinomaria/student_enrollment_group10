@@ -3,11 +3,24 @@ from django.utils import timezone
 
 # Create your models here.
 
+#This is the models for school/Department the student is enrolled to Example School of computing and Engineering Sciences
+class School(models.Model):
+    school_name = models.CharField(max_length=255, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
+
+    def __str__(self):
+
+        return self.school_name
+    
+
 # Student Model Class
+# Shows the details of the students being enrolled
 class Student(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
+    phone_number = models.CharField(max_length=13,default=1)
     enrollment_date = models.DateField(auto_now_add=True)
     date_of_birth = models.DateField(default=timezone.now)
     address = models.TextField(default='')
