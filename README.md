@@ -224,13 +224,13 @@ Figure 10: Enter All Enrollment System Data
 We can even delete a record, see:
 
 ![Delete Student Data](images/Delete-Record-Admin.png)
-
+Figure 11: Delete Student Data on Admin
 
 ## Successful Unit Testing
 We also successfully ran Python Unit Tests:
 
 ![Successful Unit Tests](images/Test-Run-Succesful.png)
-Figure 11: Successful Unit Testing Data
+Figure 12: Successful Unit Testing Data
 
 ## Contributing
 
