@@ -158,26 +158,6 @@ The application will be available at `http://127.0.0.1:8000/`.
 ## Testing with Postman(Included With Screenshots)
 *(We used Postman Visual Studio Code Extension, as the desktop agent is buggy and heavy!)
 
-<<<<<<< HEAD
-![Postman As VS Code Extension](images\Screenshot 2024-12-20 172322.png)
-Postman As a VS Code Extension
-
-
-![Postman In Action #2](images\Screenshot 2024-12-20 172859.png)
-Postman In Action Part 1
-
-### Step 3: Test Endpoints
-
-![Postman In Action #3](images\Screenshot 2024-12-20 172939.png)
-Postman In Action Part 2
-
-![GET Student By ID](images\Screenshot 2024-12-20 174326.png)
-Get A Student By his/her ID
-
-
-![GET All Students](images\Screenshot 2024-12-20 174348.png)
-Get All Students
-=======
 ![Postman As VS Code Extension](images/Screenshot%202024-12-20%20172322.png)
 Figure 1: Postman As a VS Code Extension
 
@@ -197,7 +177,6 @@ Figure 4: Get A Student By his/her ID
 
 ![GET All Students](images/Screenshot%202024-12-20%20174348.png)
 Figure 5: Get All Students
->>>>>>> version1
 
 #### Example: Create a School
 1. Select the `POST /api/schools/` endpoint.
@@ -207,11 +186,6 @@ Figure 5: Get All Students
      "school_name": "Strathmore University"
    }
    ```
-<<<<<<< HEAD
-[Postman In Action #4]()
-=======
-
->>>>>>> version1
 3. Send the request.
 4. Successful Response:
    ```json
@@ -222,19 +196,6 @@ Figure 5: Get All Students
      "created_by": 1
    }
    ```
-<<<<<<< HEAD
-![UPDATE A Student's Details](images\Screenshot 2024-12-20 184510.png)
-Update A Student's Details using a PUT Request
-
-
-![DELETE A Student's Details](images\Screenshot 2024-12-20 183806.png)
-Delete A Student By his/her ID
-
-![GET All Student's Details After DELETE operation](images\Screenshot 2024-12-20 184543.png)
-Get All Student's Details After running the DELETE HTTP Action Method
-
----
-=======
 ![UPDATE A Student's Details](images/Screenshot%202024-12-20%20184510.png)
 Figure 6: Update A Student's Details using a PUT Request
 
@@ -245,7 +206,14 @@ Figure 7: Delete A Student By his/her ID
 
 ![GET All Student's Details After DELETE operation](images/Screenshot%202024-12-20%20184543.png)
 Figure 8: Get All Student's Details After running the DELETE HTTP Action Method
->>>>>>> version1
+
+
+## Admin Functionality
+Also, here is the Admin, as we enter a Student's Data, with in-built validation:
+![Enter Student Data & Get Validated](images\Admin-Data-Validation.png)
+
+Here is another image showing us having added data for all entities successfully:
+![Enter Student, Dept, Course, Program & All Data](images\Admin-Succesful-Data-Add.png)
 
 ## Contributing
 
