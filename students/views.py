@@ -30,6 +30,10 @@ class StudentListCreateView(generics.ListCreateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
 
+    def perform_create(self, serializer):
+        # Make sure we handle any special login on creation
+        serializer.save()
+
 class StudentRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
@@ -56,6 +60,9 @@ class DepartmentRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView)
 class ProgramListCreateView(generics.ListCreateAPIView):
     queryset = Program.objects.all()
     serializer_class = ProgramSerializer
+
+    def perform_create(self, serializer):
+        serializer.save()
 
 class ProgramRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Program.objects.all()

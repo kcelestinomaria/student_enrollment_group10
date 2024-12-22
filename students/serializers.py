@@ -3,6 +3,9 @@ from .models import Student, Course, Department, Program, Enrollment, Instructor
 
 # Student Serializer
 class StudentSerializer(serializers.ModelSerializer):
+    # We use Slug-related field to reference the program by its name
+    program = serializers.SlugRelatedField(slug_field='program_name', queryset=Program.objects.all(), required=False)
+    
     class Meta:
         model = Student
         fields = '__all__'
@@ -23,7 +26,7 @@ class DepartmentSerializer(serializers.ModelSerializer):
 class ProgramSerializer(serializers.ModelSerializer):
     class Meta:
         model = Program
-        fields = '__all__'
+        fields = ['program_code', 'program_name']
 
 # Enrollment Serializer
 class EnrollmentSerializer(serializers.ModelSerializer):

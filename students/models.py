@@ -16,8 +16,8 @@ class Student(models.Model):
     program = models.ForeignKey('Program', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
-    
+        return f"{self.first_name} {self.last_name} - {self.program.program_name if self.program else 'No Program'}"
+
 
 class Course(models.Model):
     course_code = models.CharField(max_length=20, unique=True)
@@ -37,13 +37,15 @@ class Department(models.Model):
     def __str__(self):
         return self.department_name
     
+# Modify Program model to improve readability in admin
 class Program(models.Model):
     program_code = models.CharField(max_length=20, unique=True)
     program_name = models.CharField(max_length=200)
     department = models.ForeignKey('Department', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.program_name
+        return f"{self.program_code} - {self.program_name}"
+
 
 class Enrollment(models.Model):
     student = models.ForeignKey('Student', on_delete=models.CASCADE)
