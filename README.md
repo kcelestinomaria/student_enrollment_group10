@@ -38,13 +38,7 @@ The **Student Enrollment System API** is built using Django and Django REST Fram
 
 ## Design Decisions
 
-Here's a revised version of the response, presented in a more human and conversational tone:
-
----
-
-## Design Decisions
-
-When building the **Student Enrollment System API**, I aimed for a clean, scalable design that reflects the real-world relationships between students, courses, and institutions. The database design leverages Django’s ORM capabilities while ensuring the structure is easy to extend and maintain. Here's an overview of the key decisions and the relationships between models:
+When building the **Student Enrollment System API**, we aimed for a clean, scalable design that reflects the real-world relationships between students, courses, and institutions. The database design leverages Django’s ORM capabilities while ensuring the structure is easy to extend and maintain. Here's an overview of the key decisions and the relationships between models:
 
 
 ### 1. Database Selection
@@ -101,7 +95,7 @@ The API’s models were designed to mirror the core components of an academic sy
 - **Graceful Deletion**: ForeignKey options such as `on_delete=models.SET_NULL` ensure the system handles deletions without breaking data integrity.
 - **Future-Proofing**: The model structure is flexible, making it easy to introduce features like grading systems, course prerequisites, or library management without significant rewrites.
 
-This design keeps the system organized, maintainable, and easy to extend as the project grows. It’s a balance between simplicity for the current scope and adaptability for future needs.
+The above mentioned design decisions keeps the system organized, maintainable, and easy to extend as the project grows. It’s a balance between simplicity for the current scope and adaptability for future needs.
 
 ---
 
