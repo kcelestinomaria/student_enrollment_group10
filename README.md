@@ -186,7 +186,6 @@ Figure 5: Get All Students
      "school_name": "Strathmore University"
    }
    ```
-
 3. Send the request.
 4. Successful Response:
    ```json
@@ -207,6 +206,22 @@ Figure 7: Delete A Student By his/her ID
 
 ![GET All Student's Details After DELETE operation](images/Screenshot%202024-12-20%20184543.png)
 Figure 8: Get All Student's Details After running the DELETE HTTP Action Method
+
+
+## Admin Functionality
+Also, here is the Admin, as we enter a Student's Data, with in-built validation:
+![Enter Student Data & Get Validated](images\Admin-Data-Validation.png)
+Figure 9: Enter Student Data, System Validates
+
+Here is another image showing us having added data for all entities successfully:
+![Enter Student, Dept, Course, Program & All Data](images\Admin-Succesful-Data-Add.png)
+Figure 10: Enter All Enrollment System Data
+
+
+## Successful Unit Testing
+We also successfully ran Python Unit Tests
+![Successful Unit Tests](images\Test-Run-Succesful.png)
+Figure 11: Successful Unit Testing Data
 
 ## Contributing
 
