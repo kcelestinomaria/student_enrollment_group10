@@ -221,6 +221,11 @@ Here is another image showing us having added data for all entities successfully
 Figure 10: Enter All Enrollment System Data
 
 
+We can even delete a record, see:
+
+![Delete Student Data](images/Delete-Record-Admin.png)
+
+
 ## Successful Unit Testing
 We also successfully ran Python Unit Tests:
 
