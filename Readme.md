@@ -1,139 +1,221 @@
-# Student Enrollment System
+# Student Enrollment System API Documentation
 
-NB: version0 is an OLD VERSION, the latest version and its code is in branch version1(here: https://github.com/kcelestinomaria/student_enrollment/tree/version1)
-## Group members
-1. Amina Abigael- 100485
-2. Kariuki Celestine - 116533
-3. Eghosa Edokpolo - 170492
-4. Wayne Opanja -166937
-5. Mumo Mwangangi - 165437
-6. Mohammed Mumin -
+Welcome to the **Student Enrollment System API** documentation! This guide provides comprehensive information about the API, its endpoints, and instructions to set up and test the project locally.
+
+This API System is meant as group assignment for the course BBIT, unit API, at Strathmore University.
+Here are the names of the students in the group assignment, who contributed:
+1. Celestine Kariuki - Student No. 116533
+2. Eghosa Edokpolo - Student No. 170492
+3. Mohammed Mumin - Student No. 165700
+4. Wayne Opanja - Student No. 166937
+5. Amina Abigail - Student No. 100485
+6. Mumo Mwangangi - Student No. 165437
+
+---
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Installation](#installation)
+3. [Environment Setup](#environment-setup)
+4. [API Endpoints](#api-endpoints)
+    - [Schools](#schools)
+    - [Students](#students)
+    - [Courses](#courses)
+    - [Academic Years](#academic-years)
+    - [Semesters](#semesters)
+    - [Enrollments](#enrollments)
+5. [Testing with Postman](#testing-with-postman)
+6. [Contributing](#contributing)
+
+---
 
 ## Overview
-This project is a Django-based API application that simulates a student enrollment system. 
-It manages schools, students, courses, academic years, semesters, and enrollments. 
-The application provides CRUD operations for all entities and enforces relationships and constraints between them.
 
-## Features
-Manage school, student, course, semester, enrolment and academic year records.
-Handle student enrollments, linking students to courses and schools.
-Provide RESTful API endpoints for all operations.
+The **Student Enrollment System API** is built using Django and Django REST Framework (DRF). It enables managing schools, students, courses, academic years, semesters, and enrollments. The API features user authentication and role-based access for secure interaction.
 
-## System Requirements
-Python 3.12+ installed on your system.
-Django 5.0+ and Django Rest Framework 3.14+.
+---
 
-## project implemenatation and relation 
+## Installation
 
-### Models
-The Student Enrollment System consists of six key models:
+Follow these steps to clone and run the project locally:
 
-1. School: Represents an institution/Department each student is enrolled to. 
--Relationships: A school can offer multiple courses, and students enroll in courses through their respective schools.
--Fields:
-school_name (unique)
-created_at
-created_by
+### Prerequisites
+Ensure the following are installed on your system:
+- Python 3.8+
+- pip (Python package manager)
+- Git
 
-2. Student: Represents an individual enrolling in the school/courses via the system.
--Relationships: Each student is able to enroll their details, to be linked to multiple enrollments.
--Fields:
-first_name, last_name
-email (unique)
-phone_number
-enrollment_date
-created_by
+### Clone the Repository
 
-3. AcademicYear: Represents the academic year of the enrollment
--Relationships: Linked to semesters and enrollments via a foreign key relation.
--Fields:
-academic_year_name
-start_date, end_date
-created_at, updated_at
-created_by
+```bash
+$ git clone https://github.com/your-repository/enrollment-system.git
+$ cd enrollment-system
+```
 
-4. Course: Represents a field of study the student is being enrolled to.
--Relationships: A course is associated/linked with one school, and multiple students can enroll in courses.
--Fields:
-title
-code (unique)
-description
-credits
-created_by
-school
+---
 
-5. Semester: Represents a period within an academic year the student is being enrolled
--Relationships: Linked to the academic year the student enrolls.
--Fields:
-name
-start_date, end_date
-academic_year
-created_by
+## Environment Setup
 
-6.Enrollment: Represents the entry of user details into the system. Where if you are enrolled the data will be stored in the database
-Relationships: Links a student to a school, course, and academic year.
-Fields:
-student, school, course, academic_year
-enrollment_date
-created_by
+### 1. Create a Virtual Environment
 
-### viewsets
+```bash
+$ python -m venv venv
+$ source venv/bin/activate  # On Windows, use venv\Scripts\activate
+```
 
-the viewset makes use of imports from the rest_framework, which allows the import of different functionaslities to be used in the system.
+### 2. Install Dependencies
 
--SchoolListCreateView
-This view handles listing all schools in the system and creating new school records.
-It uses ListCreateAPIView, which combines listing and creation functionality.
-it only allows authenticated users to access this endpoint, and only admin users create new records 
+```bash
+$ pip install -r requirements.txt
+```
 
--SchoolRetrieveUpdateView
-This view is for retrieving details of a specific school and/or updating an existing school.
-It uses RetrieveUpdateAPIView, which allows fetching and updating individual records.
-Only authenticated users can access this view, and updates are restricted to admins.
+### 3. Apply Migrations
 
--StudentListCreateView
-Provides functionality to list all students and create new student records.
-When a new student is added, the created_by field links the record to the user who created it.
+```bash
+$ python manage.py migrate
+```
 
--StudentRetrieveUpdateView
-Enables retrieval and update of a specific student’s information.
+### 4. Create a Superuser
 
--AcademicYearListCreateView
-This view manages the listing and creation of academic year records.
-Only authenticated users can access the endpoint, but only admin or staff users are allowed to create new records.
-During creation, the created_by field ensures that the record tracks the user responsible.
+```bash
+$ python manage.py createsuperuser
+```
 
--AcademicYearRetrieveUpdateView
-Handles retrieving details of a specific academic year and updating its data.
-Only admins can perform updates, and all changes are linked to the user making the modification.
+### 5. Run the Server
 
--CourseListCreateView
-Manages listing all courses and creating new course records.
-Authenticated users can access the data, but creation is restricted to admins or staff.
-The perform_create method links the course to the user who created it.
+```bash
+$ python manage.py runserver
+```
 
--CourseRetrieveUpdateView
-Allows retrieving the details of a specific course and updating its information.
+The application will be available at `http://127.0.0.1:8000/`.
 
--SemesterListCreateView
-Provides functionality for listing all semesters and creating new semester records.
-Authenticated access is required, and only admins can create new records.
-Creation of new records track the user responsible using the created_by field.
+---
 
--SemesterRetrieveUpdateView
-Handles retrieving and updating specific semester details.
-Updates are restricted to admins.
+## API Endpoints
 
--EnrollmentListCreateView
-Manages listing all enrollments and creating new enrollment records.
-The perform_create method ensures the created_by field is set to the user making the request.
+### Authentication(Currently Disabled)
 
--EnrollmentRetrieveUpdateView
-Allows fetching and updating the details of a specific enrollment.
-Updates are limited to authenticated users, and changes are linked to the user performing the update.
+- You can go to Admin on this URL `POST /admin/`
+ 
 
--Signup View
-This view enables new users to register an account in the system.
-It accepts a POST request with a username and password in the request body.
-If the username already exists, it returns an error message.
-If the credentials are valid and unique, a new user is created, and a success message is returned.
+### Schools
+- **List/Create Schools**
+  - `GET /api/schools/`
+  - `POST /api/schools/`
+
+- **Retrieve/Update a School**
+  - `GET /api/schools/{id}/`
+  - `PUT /api/schools/{id}/`
+
+### Students
+- **List/Create Students**
+  - `GET /api/students/`
+  - `POST /api/students/`
+
+- **Retrieve/Update a Student**
+  - `GET /api/students/{id}/`
+  - `PUT /api/students/{id}/`
+
+### Courses
+- **List/Create Courses**
+  - `GET /api/courses/`
+  - `POST /api/courses/`
+
+- **Retrieve/Update a Course**
+  - `GET /api/courses/{id}/`
+  - `PUT /api/courses/{id}/`
+
+### Academic Years
+- **List/Create Academic Years**
+  - `GET /api/academicyears/`
+  - `POST /api/academicyears/`
+
+- **Retrieve/Update an Academic Year**
+  - `GET /api/academicyears/{id}/`
+  - `PUT /api/academicyears/{id}/`
+
+### Semesters
+- **List/Create Semesters**
+  - `GET /api/semesters/`
+  - `POST /api/semesters/`
+
+- **Retrieve/Update a Semester**
+  - `GET /api/semesters/{id}/`
+  - `PUT /api/semesters/{id}/`
+
+### Enrollments
+- **List/Create Enrollments**
+  - `GET /api/enrollments/`
+  - `POST /api/enrollments/`
+
+- **Retrieve/Update an Enrollment**
+  - `GET /api/enrollments/{id}/`
+  - `PUT /api/enrollments/{id}/`
+
+---
+
+## Testing with Postman(Included With Screenshots)
+*(We used Postman Visual Studio Code Extension, as the desktop agent is buggy and heavy!)
+
+![Postman As VS Code Extension](images/Screenshot%202024-12-20%20172322.png)
+Figure 1: Postman As a VS Code Extension
+
+
+![Postman In Action #2](images/Screenshot%202024-12-20%20172859.png)
+Figure 2: Postman In Action Part 1
+
+### Step 3: Test Endpoints
+
+![Postman In Action #3](images/Screenshot%202024-12-20%20172939.png)
+Figure 3: Postman In Action Part 2
+
+
+![GET Student By ID](images/Screenshot%202024-12-20%20174326.png)
+Figure 4: Get A Student By his/her ID
+
+
+![GET All Students](images/Screenshot%202024-12-20%20174348.png)
+Figure 5: Get All Students
+
+#### Example: Create a School
+1. Select the `POST /api/schools/` endpoint.
+2. In the body, input:
+   ```json
+   {
+     "school_name": "Strathmore University"
+   }
+   ```
+
+3. Send the request.
+4. Successful Response:
+   ```json
+   {
+     "id": 1,
+     "school_name": "Strathmore University",
+     "created_at": "2024-12-19T12:00:00Z",
+     "created_by": 1
+   }
+   ```
+![UPDATE A Student's Details](images/Screenshot%202024-12-20%20184510.png)
+Figure 6: Update A Student's Details using a PUT Request
+
+
+![DELETE A Student's Details](images/Screenshot%202024-12-20%20183806.png)
+Figure 7: Delete A Student By his/her ID
+
+
+![GET All Student's Details After DELETE operation](images/Screenshot%202024-12-20%20184543.png)
+Figure 8: Get All Student's Details After running the DELETE HTTP Action Method
+
+## Contributing
+
+We welcome contributions to enhance the functionality of the API. Please follow these steps:
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes and open a pull request.
+
+---
+
+Thank you for using the **Student Enrollment System API**! If you encounter any issues, please open an issue in the repository.
+
