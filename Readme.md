@@ -215,6 +215,11 @@ Also, here is the Admin, as we enter a Student's Data, with in-built validation:
 Here is another image showing us having added data for all entities successfully:
 ![Enter Student, Dept, Course, Program & All Data](images\Admin-Succesful-Data-Add.png)
 
+
+## Successful Unit Testing
+We also successfully ran Python Unit Tests
+![Successful Unit Tests](images\Test-Run-Succesful.png)
+
 ## Contributing
 
 We welcome contributions to enhance the functionality of the API. Please follow these steps:
