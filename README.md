@@ -42,7 +42,7 @@ When building the **Student Enrollment System API**, we aimed for a clean, scala
 
 
 ### 1. Database Selection
-I chose **SQLite** as the database for this project during development. It's lightweight, requires no additional setup, and integrates perfectly with Django. For production, migrating to PostgreSQL or MySQL would be a logical step for better performance and scalability.
+We chose **SQLite** as the database for this project during development. It's lightweight, requires no additional setup, and integrates perfectly with Django. For production, migrating to PostgreSQL or MySQL would be a logical step for better performance and scalability.
 
 
 ### 2. Models and Their Relationships
